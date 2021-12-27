@@ -1,0 +1,126 @@
+@import 'variables';
+
+.card {
+    background-color: $color-card-bg;
+    border-radius: 0.5rem;
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+.clearfix {
+    display: block;
+}
+
+.img-filter {
+    position: relative;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: hsl(277, 64%, 61%);
+        mix-blend-mode: color;
+    }
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    filter: blur(0.3px) opacity(0.5) sepia(1);
+}
+
+.card-body {
+    width: 80%;
+    margin: auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.card-title {
+    @include font_settings($color-headings, $font-inter, 1.5rem, 1.5rem, bold);
+
+    &>span {
+        color: $color-filter;
+    }
+}
+
+.card-text {
+    line-height: 1.7;
+    @include font_settings($color-paragraph, $font-lexend, 0.813rem, 2rem);
+}
+
+.row {
+    display: block;
+}
+
+.stat {
+    line-height: 1.7;
+    @include font_settings($color-headings, $font-inter, 1.5rem, 0, bold);
+}
+
+.headings {    
+    letter-spacing: 0.05rem;
+    @include font_settings($color-stat, $font-lexend, 0.688rem, 1.25rem);
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 480px) {
+ 
+    .card {
+        margin-top: 10%;
+    }
+
+    .card-body {
+        text-align: left;
+        width: 40%;
+        float: left;
+        padding-top: 3.5rem;
+        padding-left: 4.5rem;
+    }
+
+    .img-filter {
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        width: 50%;
+        float: right;
+    }
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .card-image {
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0.5rem;
+    }
+
+    .card-title {
+        font-size: 2.2rem;
+    }
+
+    .card-text {
+        font-size: 0.938rem;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.5rem;
+        padding-right: 5rem;
+    }    
+}
+

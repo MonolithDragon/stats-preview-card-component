@@ -1,0 +1,23 @@
+
+// Colors
+$color-body-bg: hsl(233, 47%, 7%);
+$color-card-bg: hsl(244, 38%, 16%);
+$color-filter: hsl(277, 64%, 61%);
+$color-headings: hsl(0, 0%, 100%);
+$color-paragraph: hsla(0, 0%, 100%, 0.75);
+$color-stat: hsla(0, 0%, 100%, 0.6);
+
+// Typography
+$font-inter: 'Inter', sans-serif;
+$font-lexend: 'Lexend Deca', sans-serif;
+$font-weights: (normal: 400, bold: 700);
+
+
+@mixin font_settings($color, $fontFamily, $fontSize, $marginBottom:0, $fontWeight:normal) {
+    color: $color;
+    font-family: $fontFamily;    
+    margin-bottom: $marginBottom;
+    font-size: $fontSize;
+    font-weight: map-get($map: $font-weights, $key: $fontWeight);
+}
+
